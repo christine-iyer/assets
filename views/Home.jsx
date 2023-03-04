@@ -5,7 +5,7 @@ class Home extends React.Component {
   render () {
     return (
       <Default title='Home Page'>
-        <a href='/user/signup'><button>SignUp</button></a>
+        <a href='/user/signup'><button>Wait no account yet?</button></a>
         <a href='/user/login'><button>Login</button></a>
       </Default>
     )

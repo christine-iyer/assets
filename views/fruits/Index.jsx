@@ -9,22 +9,18 @@ class Index extends React.Component {
         <ul>
           {
                         fruits.map((fruit) => {
-                          const { name, color, readyToEat, _id } = fruit
+                          const { symbol, longName, purchasePrice, principalDate, fullExchangeName,regularMarketPrice,_id } = fruit
                           return (
                             <li key={_id}>
                               <a href={`/fruits/${_id}`}>
-                                {name}
-                              </a> is {color}
+                                {symbol}, {longName}
+                              </a> is {regularMarketPrice} today versus what you paid, {purchasePrice}, on {principalDate}
 
                               <br />
-                              {
-                                        readyToEat
-                                          ? 'It\'s ready to eat'
-                                          : 'It\'s not ready to eat'
-                                    }
+                              {fullExchangeName} 
                               <br />
                               <form method='POST' action={`/fruits/${_id}?_method=DELETE`}>
-                                <input type='submit' value={`Delete ${color} ${name}`} />
+                                <input type='submit' value={`Delete ${symbol} at ${regularMarketPrice} today, versus ${purchasePrice} that you paid on ${principalDate}`} />
                               </form>
                             </li>
                           )

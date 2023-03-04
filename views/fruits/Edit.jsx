@@ -3,13 +3,14 @@ const Default = require('../layouts/Default.jsx')
 
 class Edit extends React.Component {
   render () {
-    const { name, _id, color, readyToEat } = this.props.fruit
+    const { symbol, shares,longName, purchasePrice, principalDate, fullExchangeName,regularMarketPrice,_id } = this.props.fruit
     return (
-      <Default title={`${name} Edit Page`} fruit={this.props.fruit}>
+      <Default title={`${symbol} Edit Page`} fruit={this.props.fruit}>
         <form method='POST' action={`/fruits/${_id}?_method=PUT`}>
-          Name: <input type='text' name='name' defaultValue={name} /><br />
-          Color: <input type='text' name='color' defaultValue={color} /><br />
-          Is Ready To Eat: <input type='checkbox' name='readyToEat' defaultChecked={readyToEat} /> <br />
+          Symbol: <input type='text' name='symbol' defaultValue={symbol} /><br />
+          Date: <input type='date' name='principalDate' defaultValue={principalDate} /><br />
+          Number of Shares: <input type='numeric' name='shares' defaultChecked={shares} /> <br />
+          Price per Share: <input type='numeric' name='purchasePrice' defaultChecked={purchasePrice} /> <br />
           <input type='submit' value='Edit Fruit' />
         </form>
       </Default>

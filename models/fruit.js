@@ -2,9 +2,13 @@ const mongoose = require('mongoose')
 
 // Make A Schema
 const fruitSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  color: { type: String, required: true },
-  readyToEat: Boolean,
+  symbol: { type: String, required: true },
+  longName: { type: String, required: false },
+  shares: {type: Number, required: true},
+  purchasePrice: { type: Number, required: true },
+  principalDate: { type: String, required: true },
+  fullExchangeName: { type: String, required: false },
+  regularMarketPrice: [{ type: String, required: false }], 
   username: String
 })
 

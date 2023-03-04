@@ -17,15 +17,15 @@ router.use((req, res, next) => {
   })
 // add routes
 // Index
-router.get('/api', dataController.index, apiController.index)
-// Delete
-router.delete('/api/:id', dataController.destroy, apiController.show)
-// Update
-router.put('/api/:id', dataController.update, apiController.show)
-// Create
-router.post('/api', dataController.create, apiController.show)
-// Show
-router.get('/api/:id', dataController.show, apiController.show)
+// router.get('/api', dataController.index, apiController.index)
+// // Delete
+// router.delete('/api/:id', dataController.destroy, apiController.show)
+// // Update
+// router.put('/api/:id', dataController.update, apiController.show)
+// // Create
+// router.post('/api', dataController.create, apiController.show)
+// // Show
+// router.get('/api/:id', dataController.show, apiController.show)
 
 // Index
 router.get('/', dataController.index, viewController.index)

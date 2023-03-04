@@ -29,7 +29,6 @@ const dataController = {
   },
   // Update
   update (req, res, next) {
-    req.body.readyToEat = req.body.readyToEat === 'on'
     Fruit.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedFruit) => {
       if (err) {
         res.status(400).send({
@@ -43,7 +42,7 @@ const dataController = {
   },
   // Create
   create (req, res, next) {
-    req.body.readyToEat = req.body.readyToEat === 'on'
+
     req.body.username = req.session.username
     Fruit.create(req.body, (err, createdFruit) => {
       if (err) {
