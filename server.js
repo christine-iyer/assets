@@ -36,8 +36,10 @@ app.use(
     resave: false,
   })
 )
-
+app.use
 app.use('/fruits', require('./controllers/routeController'))
+app.use('/fruits', require('./controllers/apiController'))
+
 // send all "/fruits" routes to main router (in a more advanced app we could have multiple routers for multiple paths)
 app.use('/user', require('./controllers/authController'))
 // send all "/user" routes to auth router

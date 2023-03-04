@@ -28,7 +28,7 @@ router.use((req, res, next) => {
 // router.get('/api/:id', dataController.show, apiController.show)
 
 // Index
-router.get('/', dataController.index, viewController.index)
+router.get('/', apiController.getApi, viewController.index)
 // New
 router.get('/new', viewController.newView)
 // Delete
